@@ -2,7 +2,7 @@
   <div class="app-container">
     <Navigation />
     <div class="create-portfolio-container">
-      <h1>Kendi Portföyünü Oluştur</h1>
+      <h1>Portföyünü Oluştur</h1>
       <form @submit.prevent="submitPortfolio">
         <div class="form-group">
           <label for="intro">Giriş Cümlesi</label>
