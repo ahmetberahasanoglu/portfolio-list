@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app-container">
     <Navigation />
     <div class="create-portfolio-container">
       <h1>Kendi Portföyünü Oluştur</h1>
@@ -173,11 +173,20 @@ export default {
   font-size: 13px;
 }
 
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .create-portfolio-container {
+  flex: 1;
   max-width: 800px;
+  min-width: 700px;
   margin: 0 auto;
   padding: 20px;
-  padding-top: 60px; /* Navigation barın altında boşluk bırakmak için */
+  padding-top: 60px; 
+  font-family: "Poppins", sans-serif;
 }
 
 .form-group {
@@ -283,11 +292,9 @@ export default {
 }
 
 .footer-container {
-  width: 100%;
-  background-color: #f8f9fa;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+  margin-top: auto;
 }
 
 input[type="file"]::file-selector-button {

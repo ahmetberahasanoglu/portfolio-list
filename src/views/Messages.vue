@@ -40,6 +40,7 @@ export default {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
+  font-family: "Poppins", sans-serif;
 }
 
 .messages h2 {

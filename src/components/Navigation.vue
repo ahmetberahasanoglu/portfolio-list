@@ -9,7 +9,7 @@
           </div>
           <p class="username">{{ username }}</p>
           <div v-if="showUserMenu" class="dropdown-menu user-dropdown">
-            <router-link to="/logout" class="dropdown-item">Çıkış Yap</router-link>
+            <a href="#" class="dropdown-item" @click.prevent="logout">Çıkış Yap</a>
           </div>
         </div>
         <span class="separator" v-if="loggedIn"> | </span>
@@ -41,7 +41,6 @@
     </div>
   </div>
 </template>
-
 <script>
 export default {
   data() {
@@ -96,6 +95,9 @@ export default {
       this.showNotifications = false;
       this.showUserMenu = false;
       this.showMessages = false;
+    },
+    logout() {
+      this.loggedIn = false;
     }
   },
   mounted() {
@@ -106,7 +108,6 @@ export default {
   },
 };
 </script>
-
 <style scoped>
 body {
   padding-top: 60px;
