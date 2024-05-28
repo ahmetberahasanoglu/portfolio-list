@@ -74,7 +74,7 @@ export default {
   },
   data() {
     return {
-      loggedIn: false, // giriş yapıldı mı
+      loggedIn: false, // giriş yapılmadı
       portfolios: [
         {
           id: 1,
