@@ -165,16 +165,16 @@ export default {
         console.log("Portföy verileri kaydedildi:", this.portfolio);
         alert("Portföy başarıyla kaydedildi!");
 
-        // Yeni portföy bilgisini event bus'a yayınlayın
+        
         EventBus.emit("new-portfolio", {
-          id: Date.now(), // Benzersiz bir ID kullanın
+          id: Date.now(), 
           name: "Yeni Kullanıcı",
           role: "Web Developer",
           image: this.portfolio.profileImage,
-          rating: 5, // Örnek bir değerlendirme
+          rating: 5, 
         });
 
-        // Formu sıfırlayın
+        
         this.portfolio = {
           intro: "",
           profileImage: null,
