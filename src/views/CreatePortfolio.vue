@@ -88,6 +88,7 @@
         </button>
       </form>
     </div>
+    
     <div class="footer-container">
       <SiteFooter />
     </div>
@@ -97,12 +98,15 @@
 <script>
 import Navigation from "@/components/Navigation.vue";
 import SiteFooter from "@/components/siteFooter.vue";
+import MessageComponent from "@/components/MessageComponent.vue";
+import EventBus from "@/event-bus.js";
 
 export default {
   name: "CreatePortfolio",
   components: {
     Navigation,
     SiteFooter,
+    MessageComponent,
   },
   data() {
     return {
@@ -160,6 +164,23 @@ export default {
       if (this.canSubmit) {
         console.log("Portföy verileri kaydedildi:", this.portfolio);
         alert("Portföy başarıyla kaydedildi!");
+
+        // Yeni portföy bilgisini event bus'a yayınlayın
+        EventBus.emit("new-portfolio", {
+          id: Date.now(), // Benzersiz bir ID kullanın
+          name: "Yeni Kullanıcı",
+          role: "Web Developer",
+          image: this.portfolio.profileImage,
+          rating: 5, // Örnek bir değerlendirme
+        });
+
+        // Formu sıfırlayın
+        this.portfolio = {
+          intro: "",
+          profileImage: null,
+          jobImages: [],
+          specialities: [],
+        };
       } else {
         alert("Lütfen tüm gerekli alanları doldurun.");
       }
